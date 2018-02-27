@@ -6,6 +6,8 @@ services:
       - "./data/db:/var/lib/mysql"
     restart: always
     ports:
+     # Use IP to avoid connection through the socket /tmp/mysql.sock
+     # mysql -h127.0.0.1 -uwordpress -p wordpress
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: password
